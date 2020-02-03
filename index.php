@@ -47,8 +47,7 @@ for ($i = 0; $i < rand(1, 100); $i++) {
     </div>
 
 
-<br><br><br>
-
+    <br><br><br>
 
 
 <?php
@@ -78,7 +77,11 @@ function getRandomString($length, $type)
     } elseif ($type == 'number-letter' && $length > 2) {
         for ($i = 0; $i < $length; $i++) {
             $string .= $characters[mt_rand(0, strlen($characters) - 1)];
+            if (strpos($numbers, $string[$i]) !== false) {
+                echo  $string[$i] . " ";
+            }
         }
+        echo "<br>";
         echo $string;
     } elseif
     ($type == 'number-letter' && $length = 2) {
@@ -87,6 +90,7 @@ function getRandomString($length, $type)
         echo $string[0], $string[1];
     }
 }
+
 
 
 getRandomString($length, $type);
