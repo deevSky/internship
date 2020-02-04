@@ -11,6 +11,6 @@ class Kia extends Car
     }
 }
 
-$kia = new Kia("Kia", "blue", 2015);
+$kia = new Kia('Kia', 'blue', 2015);
 echo $kia->introduce();
-echo "<br>";
+echo '<br>';

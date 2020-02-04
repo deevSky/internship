@@ -1,4 +1,3 @@
-<a href="task1/index.php">task 1</a>
 
 <?php
 // task 1

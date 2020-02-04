@@ -11,6 +11,6 @@ class BMW extends Car
     }
 }
 
-$bmw = new BMW("BMW", "white", 2019);
+$bmw = new BMW('BMW', 'white', 2019);
 echo $bmw->introduce();
-echo "<br>";
+echo '<br>';

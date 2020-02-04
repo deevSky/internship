@@ -1,13 +1,13 @@
-<div style="width: 180px; height: 190px; border: 1px solid black">
+<div style='width: 180px; height: 190px; border: 1px solid black'>
     <form method="post">
-        <input type="number" name="length" placeholder="Length"> <br><br>
+        <input type='number' name='length' placeholder=Length> <br><br>
         <p>Choose type</p>
-        <select name="type" id="">
-            <option value="number">number</option>
-            <option value="letter">letter</option>
-            <option value="number-letter">number and letter</option>
+        <select name='type'>
+            <option value='number'>number</option>
+            <option value='letter'>letter</option>
+            <option value='number-letter'>number and letter</option>
         </select> <br><br>
-        <button type="submit" name="submit">Submit</button>
+        <button type='submit' name='submit'>Submit</button>
     </form>
 </div>
 
