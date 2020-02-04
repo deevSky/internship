@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
 function getRandomString($length, $type)
 {
-    $characters = array_merge(range(0, 9), range('A', 'Z'), range('a', 'z'));
+    $numberLetter = array_merge(range(0, 9), range('A', 'Z'), range('a', 'z'));
     $numbers = range(0, 9);
     $letters = array_merge(range('A', 'Z'), range('a', 'z'));
     $arr = '';
@@ -40,12 +40,12 @@ function getRandomString($length, $type)
         echo $arr;
     } elseif ($type == 'number-letter' && $length > 2) {
         for ($i = 0; $i < $length; $i++) {
-            $arr .= $characters[mt_rand(0, count($characters) - 1)];
+            $arr .= $numberLetter[mt_rand(0, count($numberLetter) - 1)];
         }
         echo "<br>";
         echo $arr;
     } elseif ($type == 'number-letter' && $length = 2) {
-        $arr[0] = $characters[mt_rand(0, count($characters) - 1)];
+        $arr[0] = $numberLetter[mt_rand(0, count($numberLetter) - 1)];
         if (in_array($arr[0], $letters)) {
             $arr[1] = $numbers[mt_rand(0, count($numbers) - 1)];
         } else {

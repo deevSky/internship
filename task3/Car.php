@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: KHACH
- * Date: 2/4/2020
- * Time: 11:39
- */
 
 abstract class Car
 {

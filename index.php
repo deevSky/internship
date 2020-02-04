@@ -1,3 +1,5 @@
+<a href="task1/index.php">task 1</a>
+
 <?php
 // task 1
 
@@ -98,58 +100,8 @@ getRandomString($length, $type);
 echo "<br><br><br><br>";
 
 
-//Abstract classes- task 3
-echo 'Task 3' . "<br><br><br>";
 
-abstract class Car
-{
-    public $name;
-    public $color;
-    public $year;
+//task 3
 
-    public function __construct($name, $color, $year)
-    {
-        $this->name = $name;
-        $this->color = $color;
-        $this->year = $year;
-    }
-
-    abstract public function introduce();
-}
-
-
-class Kia extends Car
-{
-    public function introduce()
-    {
-        return "$this->name $this->color
-        $this->year";
-    }
-}
-
-class BMW extends Car
-{
-    public function introduce()
-    {
-        return "$this->name $this->color
-        $this->year";
-    }
-}
-
-
-$kia = new Kia("Kia", "blue", 2015);
-echo $kia->introduce();
-echo "<br>";
-
-$bmw = new BMW("BMW", "white", 2019);
-echo $bmw->introduce();
-echo "<br>";
-
-
-
-//$number = range(0,5);
-//print_r ($number);
-
-//$arr = array('Hello','World!','Beautiful','Day!');
-//json_encode($number);
-//var_dump($number);
+    include 'task3/Kia.php';
+    include 'task3/BMW.php';
