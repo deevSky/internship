@@ -1,17 +1,15 @@
 <?php
 // task 1
 
-echo 'Task 1' . "<br><br>";
-
 $array = [];
 for ($i = 0; $i < rand(1, 100); $i++) {
     array_push($array, rand(1, 100));
-    $array = array_unique($array);
-    rsort($array);
 }
+$array = array_unique($array);
+rsort($array);
 ?>
 
-    <table style="border: 1px solid;border-collapse: separate ">
+    <table style='border: 1px solid;border-collapse: separate'>
         <tr>
             <th>Index</th>
             <th>Element</th>
@@ -19,10 +17,10 @@ for ($i = 0; $i < rand(1, 100); $i++) {
 
         <?php
         foreach ($array as $key => $item) {
-            echo "<tr>";
-            echo "<td>" . $key . "</td>";
-            echo "<td>" . $item . "</td>";
-            echo "</tr>";
+            echo '<tr>';
+            echo '<td>' . ($key + 1) . "</td>";
+            echo '<td>' . $item . '</td>';
+            echo '</tr>';
         }
         ?>
 
@@ -59,38 +57,40 @@ if (isset($_POST['submit'])) {
 
 function getRandomString($length, $type)
 {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $numbers = '123456789';
-    $letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $string = '';
+    $characters = array_merge(range(0, 9), range('A', 'Z'), range('a', 'z'));
+    $numbers = range(0, 9);
+    $letters = array_merge(range('A', 'Z'), range('a', 'z'));
+    $arr = '';
 
     if ($type == 'number') {
         for ($i = 0; $i < $length; $i++) {
-            $string .= $numbers[mt_rand(0, strlen($numbers) - 1)];
+            $arr .= $numbers[mt_rand(0, count($numbers) - 1)];
         }
-        echo $string;
+        echo $arr;
     } elseif ($type == 'letter') {
         for ($i = 0; $i < $length; $i++) {
-            $string .= $letters[mt_rand(0, strlen($letters) - 1)];
+            $arr .= $letters[mt_rand(0, count($letters) - 1)];
         }
-        echo $string;
+        echo $arr;
     } elseif ($type == 'number-letter' && $length > 2) {
         for ($i = 0; $i < $length; $i++) {
-            $string .= $characters[mt_rand(0, strlen($characters) - 1)];
-            if (strpos($numbers, $string[$i]) !== false) {
-                echo  $string[$i] . " ";
-            }
+            $arr .= $characters[mt_rand(0, count($characters) - 1)];
+//            if (in_array($arr[$i], $numbers)) {
+//                echo $arr[$i] . " ";
+//            }
         }
         echo "<br>";
-        echo $string;
-    } elseif
-    ($type == 'number-letter' && $length = 2) {
-        $string[0] = $numbers[mt_rand(0, strlen($numbers) - 1)];
-        $string[1] = $letters[mt_rand(0, strlen($letters) - 1)];
-        echo $string[0], $string[1];
+        echo $arr;
+    } elseif ($type == 'number-letter' && $length = 2) {
+        $arr[0] = $characters[mt_rand(0, count($characters) - 1)];
+        if (in_array($arr[0], $letters)) {
+            $arr[1] = $numbers[mt_rand(0, count($numbers) - 1)];
+            } else {
+            $arr[1] = $letters[mt_rand(0, count($letters) - 1)];
+            }
+        echo $arr[0], $arr[1];
     }
 }
-
 
 
 getRandomString($length, $type);
@@ -99,7 +99,8 @@ echo "<br><br><br><br>";
 
 
 //Abstract classes- task 3
-echo  'Task 3' . "<br><br><br>";
+echo 'Task 3' . "<br><br><br>";
+
 abstract class Car
 {
     public $name;
@@ -143,3 +144,12 @@ echo "<br>";
 $bmw = new BMW("BMW", "white", 2019);
 echo $bmw->introduce();
 echo "<br>";
+
+
+
+//$number = range(0,5);
+//print_r ($number);
+
+//$arr = array('Hello','World!','Beautiful','Day!');
+//json_encode($number);
+//var_dump($number);
